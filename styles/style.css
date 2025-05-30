@@ -218,20 +218,6 @@ body {
     text-align: center;
 }
 
-.form-note {
-    background-color: #e3f2fd;
-    padding: 10px 15px;
-    border-radius: 8px;
-    margin: 1.5rem auto;
-    max-width: 500px;
-    font-size: 0.9rem;
-}
-
-.form-note i {
-    color: var(--secondary-color);
-    margin-right: 5px;
-}
-
 #contact-form {
     max-width: 600px;
     margin: 0 auto;
