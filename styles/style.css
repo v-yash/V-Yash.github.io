@@ -283,7 +283,8 @@ body {
     cursor: pointer;
     transition: background-color 0.3s;
     display: block;
-    margin: 0 auto;
+    width: 100%;
+    margin: 2rem auto 0;
 }
 
 .submit-btn:hover {
@@ -295,6 +296,11 @@ body {
     padding: 15px;
     border-radius: 5px;
     text-align: center;
+    display: none;
+}
+
+#form-message.show {
+    display: block;
 }
 
 #form-message.success {
