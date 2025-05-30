@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
         console.warn('Back to Top button not found');
     }
 
-    // Contact Form Submission - MOVED INSIDE DOMContentLoaded
+    // Contact Form Submission
     const contactForm = document.getElementById('contact-form');
     const formMessage = document.getElementById('form-message');
 
@@ -54,6 +54,9 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             const formData = new FormData(this);
             
+            // Convert form data to URL encoded string
+            const encodedData = new URLSearchParams(formData).toString();
+            
             // Show loading state
             const submitBtn = this.querySelector('.submit-btn');
             submitBtn.disabled = true;
@@ -61,7 +64,10 @@ document.addEventListener('DOMContentLoaded', function() {
             
             fetch(this.action, {
                 method: 'POST',
-                body: formData,
+                body: encodedData,
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
                 mode: 'no-cors'
             })
             .then(() => {
