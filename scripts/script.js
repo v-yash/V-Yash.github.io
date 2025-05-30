@@ -44,3 +44,47 @@ if (backToTopBtn) { // Safety check
 } else {
     console.warn('Back to Top button not found');
 }});
+
+// Contact Form Submission
+const contactForm = document.getElementById('contact-form');
+const formMessage = document.getElementById('form-message');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const formData = new FormData(this);
+        
+        // Show loading state
+        const submitBtn = this.querySelector('.submit-btn');
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+        
+        fetch(this.action, {
+            method: 'POST',
+            body: formData,
+            mode: 'no-cors'
+        })
+        .then(() => {
+            formMessage.textContent = 'Message sent successfully!';
+            formMessage.className = 'success';
+            contactForm.reset();
+        })
+        .catch(error => {
+            formMessage.textContent = 'Error sending message. Please try again.';
+            formMessage.className = 'error';
+            console.error('Form submission error:', error);
+        })
+        .finally(() => {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send Message';
+            
+            // Auto-hide message after 5 seconds
+            setTimeout(() => {
+                formMessage.textContent = '';
+                formMessage.className = '';
+            }, 5000);
+        });
+    });
+} else {
+    console.warn('Contact form not found');
+}
