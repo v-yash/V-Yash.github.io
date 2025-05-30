@@ -54,9 +54,6 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             const formData = new FormData(this);
             
-            // Convert form data to URL encoded string
-            const encodedData = new URLSearchParams(formData).toString();
-            
             // Show loading state
             const submitBtn = this.querySelector('.submit-btn');
             submitBtn.disabled = true;
@@ -64,20 +61,23 @@ document.addEventListener('DOMContentLoaded', function() {
             
             fetch(this.action, {
                 method: 'POST',
-                body: encodedData,
+                body: formData,
                 headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                },
-                mode: 'no-cors'
+                    'Accept': 'application/json'
+                }
             })
-            .then(() => {
-                formMessage.textContent = 'Message sent successfully!';
-                formMessage.className = 'success';
-                contactForm.reset();
+            .then(response => {
+                if (response.ok) {
+                    formMessage.textContent = 'Message sent successfully!';
+                    formMessage.className = 'success show';
+                    contactForm.reset();
+                } else {
+                    throw new Error('Form submission failed');
+                }
             })
             .catch(error => {
                 formMessage.textContent = 'Error sending message. Please try again.';
-                formMessage.className = 'error';
+                formMessage.className = 'error show';
                 console.error('Form submission error:', error);
             })
             .finally(() => {
