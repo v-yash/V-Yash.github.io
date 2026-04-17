@@ -10,103 +10,119 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yash Verma - Cloud & Automation Engineer</title>
+    <title>Yash Verma - Cloud & DevOps Engineer</title>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <div id="particles-js"></div>
+    <div class="bg-grid"></div>
+    <div class="glow-orb top-left"></div>
+    <div class="glow-orb bottom-right"></div>
 
     <header class="hero" id="home">
         <div class="container gs-reveal">
             <div class="profile-container">
                 <img src="images/profile.jpg" alt="Yash Verma" class="profile-img">
-                <div class="ring-glow"></div>
             </div>
-            <h1 class="glitch-text" data-text="Yash Verma">Yash Verma</h1>
-            <h2 class="terminal-text">> <span id="typewriter"></span><span class="cursor">_</span></h2>
+            <h1>Yash Verma</h1>
+            <h2 class="subtitle">Cloud Architect & SRE</h2>
+            <p class="hero-desc">Architecting resilient, scalable multi-cloud infrastructure across AWS & GCP.</p>
+            
             <div class="social-links">
-                <a href="https://linkedin.com/in/yash0405" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/v-yash" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://drive.google.com/file/d/1OS8qvL7C_ZXGDtNth3k-77O6unk1aGmn/view?usp=sharing" target="_blank"><i class="fas fa-file-pdf"></i></a>
+                <a href="https://linkedin.com/in/yash0405" target="_blank" class="glass-btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://github.com/v-yash" target="_blank" class="glass-btn"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://drive.google.com/file/d/1OS8qvL7C_ZXGDtNth3k-77O6unk1aGmn/view?usp=sharing" target="_blank" class="glass-btn"><i class="fas fa-file-pdf"></i> Resume</a>
             </div>
         </div>
     </header>
 
-    <section class="about" id="about">
+    <section class="dashboard-section" id="skills">
         <div class="container">
-            <h2 class="section-title gs-reveal"><span>01.</span> About System</h2>
-            <div class="glass-panel gs-reveal">
-                <p class="bio-text">
-                    SDE-DevOps professional with 3+ years experience in cloud infrastructure automation and optimization. 
-                    Specialized in AWS, Kubernetes, and CI/CD pipeline implementation. Successfully reduced cloud costs by 40% 
-                    and automated critical workflows for enterprise applications.
-                </p>
-                <div class="highlights">
-                    <div class="highlight-card gs-stagger">
-                        <i class="fas fa-network-wired"></i>
-                        <h3>Architecture</h3>
-                        <p>Scalable cloud solutions</p>
+            <h2 class="section-title gs-reveal">Infrastructure <span>Stack</span></h2>
+            
+            <div class="bento-grid">
+                <div class="bento-card span-2 gs-reveal">
+                    <h3><i class="fas fa-cloud"></i> Multi-Cloud Environment</h3>
+                    <div class="tech-icons">
+                        <div class="tech-item"><i class="devicon-amazonwebservices-plain colored"></i><span>AWS</span></div>
+                        <div class="tech-item"><i class="devicon-googlecloud-plain colored"></i><span>GCP</span></div>
                     </div>
-                    <div class="highlight-card gs-stagger">
-                        <i class="fas fa-robot"></i>
-                        <h3>Automation</h3>
-                        <p>Zero-touch CI/CD pipelines</p>
-                    </div>
-                    <div class="highlight-card gs-stagger">
-                        <i class="fas fa-server"></i>
-                        <h3>Optimization</h3>
-                        <p>40% reduction in AWS costs</p>
+                    <p class="card-detail">Designing fault-tolerant architectures and optimizing costs across major cloud providers.</p>
+                </div>
+
+                <div class="bento-card gs-reveal">
+                    <h3><i class="fas fa-box-open"></i> Orchestration</h3>
+                    <div class="tech-icons">
+                        <div class="tech-item"><i class="devicon-kubernetes-plain colored"></i><span>K8s</span></div>
+                        <div class="tech-item"><i class="devicon-docker-plain colored"></i><span>Docker</span></div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <section class="skills" id="skills">
-        <div class="container">
-            <h2 class="section-title gs-reveal"><span>02.</span> Tech Stack</h2>
-            <div class="skills-grid">
-                <div class="skill-item gs-skill"><i class="fab fa-aws"></i><span>AWS</span></div>
-                <div class="skill-item gs-skill"><i class="fas fa-cube"></i><span>Kubernetes</span></div>
-                <div class="skill-item gs-skill"><i class="fas fa-code"></i><span>Terraform</span></div>
-                <div class="skill-item gs-skill"><i class="fab fa-python"></i><span>Python</span></div>
-                <div class="skill-item gs-skill"><i class="fas fa-database"></i><span>PostgreSQL</span></div>
-                <div class="skill-item gs-skill"><i class="fas fa-bolt"></i><span>CI/CD</span></div>
-                <div class="skill-item gs-skill"><i class="fab fa-docker"></i><span>Docker</span></div>
-                <div class="skill-item gs-skill"><i class="fas fa-chart-line"></i><span>Monitoring</span></div>
+                <div class="bento-card gs-reveal">
+                    <h3><i class="fas fa-code-branch"></i> Infrastructure as Code</h3>
+                    <div class="tech-icons">
+                        <div class="tech-item"><i class="devicon-terraform-plain colored"></i><span>Terraform</span></div>
+                        <div class="tech-item"><i class="devicon-python-plain colored"></i><span>Python</span></div>
+                    </div>
+                </div>
+
+                <div class="bento-card span-2 gs-reveal">
+                    <h3><i class="fas fa-satellite-dish"></i> CI/CD & Observability</h3>
+                    <div class="tech-icons small-icons">
+                        <div class="tech-item"><i class="devicon-jenkins-line colored"></i><span>Jenkins</span></div>
+                        <div class="tech-item"><i class="devicon-github-original"></i><span>Actions</span></div>
+                        <div class="tech-item"><i class="devicon-prometheus-original colored"></i><span>Prometheus</span></div>
+                        <div class="tech-item"><i class="devicon-grafana-original colored"></i><span>Grafana</span></div>
+                        <div class="tech-item"><i class="devicon-postgresql-plain colored"></i><span>PostgreSQL</span></div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <section class="projects" id="projects">
         <div class="container">
-            <h2 class="section-title gs-reveal"><span>03.</span> Deployed Nodes (Projects)</h2>
+            <h2 class="section-title gs-reveal">Deployed <span>Architectures</span></h2>
             <div class="project-grid">
-                <div class="project-card gs-project">
-                    <div class="card-header">
-                        <i class="far fa-folder-open"></i>
+                <div class="dashboard-card gs-project">
+                    <div class="card-top">
+                        <span class="status-indicator online"></span>
                         <a href="https://github.com/v-yash/yash-playground/tree/main/python/project/aws-cost-optimizer" target="_blank"><i class="fab fa-github"></i></a>
                     </div>
-                    <h3>AWS Cost Optimizer</h3>
-                    <p>Automated infrastructure scaling saving 40% cloud costs through intelligent resource management.</p>
+                    <h3>Cloud Cost Optimizer</h3>
+                    <p>Automated infrastructure scaling saving 40% cloud costs through intelligent resource management and right-sizing.</p>
+                    <div class="card-tags">
+                        <span>AWS</span><span>Python</span><span>Automation</span>
+                    </div>
                 </div>
-                <div class="project-card gs-project">
-                    <div class="card-header">
-                        <i class="far fa-folder-open"></i>
+                
+                <div class="dashboard-card gs-project">
+                    <div class="card-top">
+                        <span class="status-indicator online"></span>
                         <a href="https://github.com/v-yash/yash-playground/tree/main/python/project/slack-bot" target="_blank"><i class="fab fa-github"></i></a>
                     </div>
-                    <h3>K8s Monitoring Bot</h3>
-                    <p>Slack-integrated Kubernetes troubleshooting tool for real-time cluster health tracking.</p>
+                    <h3>K8s Observability Bot</h3>
+                    <p>Slack-integrated Kubernetes troubleshooting tool for real-time cluster health tracking and incident response.</p>
+                    <div class="card-tags">
+                        <span>Kubernetes</span><span>Slack API</span><span>Python</span>
+                    </div>
                 </div>
-                <div class="project-card gs-project">
-                    <div class="card-header">
-                        <i class="far fa-folder-open"></i>
+
+                <div class="dashboard-card gs-project">
+                    <div class="card-top">
+                        <span class="status-indicator online"></span>
                         <a href="https://github.com/v-yash/yash-playground/tree/main/python/project/sendmail" target="_blank"><i class="fab fa-github"></i></a>
                     </div>
-                    <h3>Sendmail Package</h3>
-                    <p>AWS-SES integrated Python package for secure email delivery with Slack alerts.</p>
+                    <h3>Secure Mail Gateway</h3>
+                    <p>AWS-SES integrated Python package for secure email delivery without credentials, featuring alerting templates.</p>
+                    <div class="card-tags">
+                        <span>AWS SES</span><span>Python</span><span>Security</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -114,26 +130,26 @@
 
     <section class="contact" id="contact">
         <div class="container gs-reveal">
-            <h2 class="section-title"><span>04.</span> Ping Request</h2>
-            <form id="contact-form" action="https://formspree.io/f/xrbkzplp" method="POST" class="glass-panel">
-                <div class="form-group">
-                    <input type="text" id="name" name="name" placeholder="Name" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" id="email" name="email" placeholder="Email" required>
-                </div>
-                <div class="form-group">
-                    <textarea id="message" name="message" placeholder="Initialize connection sequence..." required></textarea>
-                </div>
-                <button type="submit" class="submit-btn">> Execute_Send</button>
-            </form>
-            <div id="form-message"></div>
+            <div class="contact-box">
+                <h2>Initialize Connection</h2>
+                <p>Looking to scale your infrastructure or optimize your cloud spend?</p>
+                <form id="contact-form" action="https://formspree.io/f/xrbkzplp" method="POST">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Project details..." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Execute deployment</button>
+                </form>
+                <div id="form-message"></div>
+            </div>
         </div>
     </section>
 
-    <button id="backToTop" title="Go to top"><i class="fas fa-chevron-up"></i></button>
-
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="scripts/script.js"></script>
