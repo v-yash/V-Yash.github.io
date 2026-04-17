@@ -1,37 +1,61 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // GSAP Scroll Animations
+    // 1. Initialize 3D Interactive Background (Vanta.js)
+    // This creates a premium, dynamic network effect tied to mouse movement
+    VANTA.NET({
+        el: "#vanta-bg",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.00,
+        scaleMobile: 1.00,
+        color: 0x3b82f6,      // Matches our accent-blue
+        backgroundColor: 0x050810, // Matches our bg-dark
+        points: 12.00,
+        maxDistance: 22.00,
+        spacing: 18.00
+    });
+
+    // 2. GSAP Scroll Animations (Fixed Bug)
     gsap.registerPlugin(ScrollTrigger);
 
-    // Fade in sections as you scroll down
+    // Using fromTo ensures the elements are forced to an opacity of 1, fixing the disappearing bug
     gsap.utils.toArray('.gs-reveal').forEach(function(elem) {
-        gsap.from(elem, {
+        gsap.fromTo(elem, 
+            { y: 50, opacity: 0 }, 
+            {
+                scrollTrigger: {
+                    trigger: elem,
+                    start: "top 85%", // Triggers when element is 85% down the screen
+                    toggleActions: "play none none reverse"
+                },
+                y: 0,
+                opacity: 1,
+                duration: 0.8,
+                ease: "power3.out"
+            }
+        );
+    });
+
+    // Stagger animation for project cards (Fixed Bug)
+    gsap.fromTo(".gs-project", 
+        { y: 50, opacity: 0 },
+        {
             scrollTrigger: {
-                trigger: elem,
-                start: "top 85%",
-                toggleActions: "play none none reverse"
+                trigger: ".project-grid",
+                start: "top 80%"
             },
-            y: 40,
-            opacity: 0,
+            y: 0,
+            opacity: 1,
             duration: 0.8,
-            ease: "power3.out"
-        });
-    });
+            stagger: 0.15,
+            ease: "power2.out"
+        }
+    );
 
-    // Stagger animation for project cards
-    gsap.from(".gs-project", {
-        scrollTrigger: {
-            trigger: ".project-grid",
-            start: "top 80%"
-        },
-        y: 40,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.15,
-        ease: "power2.out"
-    });
-
-    // Form Handling
+    // 3. Form Handling
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
