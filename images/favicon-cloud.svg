@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Cloud logo">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="#050810"/>
+  <path d="M42.5 48H22.8C16.9 48 12 43.3 12 37.4c0-5 3.5-9.4 8.3-10.8C21.3 20.8 26.3 16 32.5 16c6.9 0 12.7 5.3 13.4 12.1 5.3.3 9.6 4.7 9.6 10.1 0 5.4-4.4 9.8-9.8 9.8H42.5z" fill="url(#g)"/>
+  <path d="M24 34.5h16" stroke="#e0f2fe" stroke-width="3.2" stroke-linecap="round"/>
+  <path d="M32 26.5v16" stroke="#e0f2fe" stroke-width="3.2" stroke-linecap="round"/>
+</svg>
