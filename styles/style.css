@@ -13,49 +13,52 @@
 body { background-color: var(--bg-dark); color: var(--text-main); line-height: 1.6; overflow-x: hidden; }
 
 #vanta-bg { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -2; }
-.container { max-width: 1100px; margin: 0 auto; padding: 80px 2rem; position: relative; z-index: 1; }
+.container { max-width: 1100px; margin: 0 auto; padding: 60px 2rem; position: relative; }
 
-.section-title { font-size: 2.5rem; font-weight: 700; margin-bottom: 3rem; text-align: center; }
+/* Profile Image Fix */
+.profile-container { width: 150px; height: 150px; margin: 0 auto 2rem; border-radius: 50%; border: 3px solid var(--accent-blue); overflow: hidden; box-shadow: 0 0 20px var(--glow); }
+.profile-img { width: 100%; height: 100%; object-fit: cover; }
+
+.hero { text-align: center; padding: 100px 0 60px; }
+.hero h1 { font-size: 3.5rem; margin-bottom: 0.5rem; }
+.subtitle { font-size: 1.5rem; color: var(--accent-blue); margin-bottom: 1.5rem; font-weight: 500; }
+.hero-desc { max-width: 600px; margin: 0 auto 2.5rem; color: var(--text-muted); }
+
+.glass-btn { 
+    display: inline-block; padding: 0.8rem 1.5rem; border: 1px solid var(--card-border); 
+    background: var(--card-bg); color: white; text-decoration: none; border-radius: 8px;
+    margin: 0 10px; transition: 0.3s; backdrop-filter: blur(8px);
+}
+.glass-btn:hover { border-color: var(--accent-blue); background: rgba(59, 130, 246, 0.1); }
+
+.section-title { font-size: 2.5rem; margin-bottom: 3rem; text-align: center; }
 .section-title span { background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
-/* Hero & Experience styles follow your existing structure but kept clean */
+/* Experience Grid Enhancement */
 .experience-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
-.experience-card { background: var(--card-bg); backdrop-filter: blur(16px); border: 1px solid var(--card-border); border-radius: 16px; padding: 2rem; transition: all 0.3s; }
-.experience-card.span-2 { grid-column: span 2; }
-.experience-card:hover { border-color: var(--accent-blue); transform: translateY(-5px); }
+.experience-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px; padding: 2rem; backdrop-filter: blur(16px); }
+.experience-card.span-2 { grid-column: span 2; border-left: 4px solid var(--accent-blue); }
+.experience-card-top { display: flex; justify-content: space-between; margin-bottom: 1rem; align-items: flex-start; }
+.experience-company { color: var(--accent-blue); font-weight: 600; font-size: 0.9rem; }
+.experience-date { font-size: 0.85rem; color: var(--text-muted); }
+.experience-bullets { padding-left: 1.2rem; margin: 1rem 0; color: var(--text-muted); font-size: 0.95rem; }
+.experience-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1rem; }
+.experience-tags span { background: rgba(255,255,255,0.05); padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; border: 1px solid var(--card-border); }
 
-/* NEW CONTACT STYLES */
-.contact-section { text-align: center; padding-bottom: 120px; }
-.contact-description { max-width: 700px; margin: 0 auto 3rem; color: var(--text-muted); font-size: 1.1rem; }
-
-.contact-links-grid { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
+/* Contact Section Enhancement */
+.contact-box { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 24px; padding: 4rem 2rem; text-align: center; backdrop-filter: blur(16px); }
+.contact-links-grid { display: flex; justify-content: center; gap: 2rem; margin-top: 3rem; flex-wrap: wrap; }
 .contact-card {
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    padding: 2rem;
-    border-radius: 16px;
-    width: 200px;
-    text-decoration: none;
-    color: var(--text-main);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    transition: all 0.3s ease;
+    background: rgba(0,0,0,0.2); border: 1px solid var(--card-border); padding: 1.5rem; 
+    border-radius: 16px; width: 160px; text-decoration: none; color: white;
+    display: flex; flex-direction: column; align-items: center; gap: 0.8rem; transition: 0.3s;
 }
-
-.contact-card i { font-size: 2.5rem; color: var(--accent-blue); }
-.contact-card span { font-weight: 600; font-size: 0.9rem; text-transform: uppercase; }
-
-.contact-card:hover {
-    border-color: var(--accent-purple);
-    background: rgba(139, 92, 246, 0.1);
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px var(--glow);
-}
+.contact-card i { font-size: 2rem; color: var(--accent-blue); }
+.contact-card:hover { transform: translateY(-10px); border-color: var(--accent-purple); box-shadow: 0 10px 20px var(--glow); }
 
 @media (max-width: 768px) {
     .experience-grid { grid-template-columns: 1fr; }
     .experience-card.span-2 { grid-column: span 1; }
+    .hero h1 { font-size: 2.5rem; }
     .contact-card { width: 100%; }
 }

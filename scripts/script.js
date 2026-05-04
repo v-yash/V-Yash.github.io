@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize 3D Background
     VANTA.NET({
         el: "#vanta-bg",
         mouseControls: true,
@@ -16,7 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
         spacing: 18.00
     });
 
-    // GSAP Scroll Animations
     gsap.registerPlugin(ScrollTrigger);
 
     gsap.utils.toArray('.gs-reveal').forEach(function(elem) {
