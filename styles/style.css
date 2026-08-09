@@ -34,16 +34,23 @@ body { background-color: var(--bg-dark); color: var(--text-main); line-height: 1
 .section-title { font-size: 2.5rem; margin-bottom: 3rem; text-align: center; }
 .section-title span { background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
-/* Experience Grid Enhancement */
-.experience-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
-.experience-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px; padding: 2rem; backdrop-filter: blur(16px); }
-.experience-card.span-2 { grid-column: span 2; border-left: 4px solid var(--accent-blue); }
-.experience-card-top { display: flex; justify-content: space-between; margin-bottom: 1rem; align-items: flex-start; }
-.experience-company { color: var(--accent-blue); font-weight: 600; font-size: 0.9rem; }
-.experience-date { font-size: 0.85rem; color: var(--text-muted); }
-.experience-bullets { padding-left: 1.2rem; margin: 1rem 0; color: var(--text-muted); font-size: 0.95rem; }
-.experience-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1rem; }
-.experience-tags span { background: rgba(255,255,255,0.05); padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; border: 1px solid var(--card-border); }
+/* Experience Timeline Enhancement */
+.timeline { position: relative; max-width: 900px; margin: 0 auto; padding: 2rem 0; }
+.timeline::after { content: ''; position: absolute; width: 2px; background: linear-gradient(to bottom, var(--accent-blue), var(--accent-purple), transparent); top: 0; bottom: 0; left: 50%; margin-left: -1px; z-index: -1; }
+.timeline-item { padding: 10px 50px; position: relative; background-color: inherit; width: 50%; }
+.timeline-item:nth-child(odd) { left: 0; }
+.timeline-item:nth-child(even) { left: 50%; }
+.timeline-dot { position: absolute; width: 24px; height: 24px; background-color: var(--card-bg); border: 4px solid var(--accent-blue); border-radius: 50%; z-index: 1; top: 50%; transform: translateY(-50%); box-shadow: 0 0 10px var(--glow); transition: 0.3s ease; }
+.timeline-item:hover .timeline-dot { background-color: var(--accent-purple); border-color: var(--accent-purple); box-shadow: 0 0 20px var(--accent-purple); transform: translateY(-50%) scale(1.2); }
+.timeline-item:nth-child(odd) .timeline-dot { right: -12px; }
+.timeline-item:nth-child(even) .timeline-dot { left: -12px; }
+.timeline-content { padding: 25px 35px; background: var(--card-bg); border: 1px solid var(--card-border); position: relative; border-radius: 20px; backdrop-filter: blur(16px); transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s, border-color 0.4s; }
+.timeline-content:hover { transform: translateY(-8px); box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4); border-color: var(--accent-blue); }
+.timeline-date { font-size: 0.85rem; color: var(--accent-blue); font-weight: 600; margin-bottom: 8px; letter-spacing: 1.5px; text-transform: uppercase; }
+.timeline-role { font-size: 1.4rem; color: var(--text-main); margin-bottom: 4px; font-weight: 700; }
+.timeline-company { font-size: 1.05rem; color: #d1d5db; font-weight: 500; margin-bottom: 12px; }
+.timeline-location { font-size: 0.9rem; color: var(--text-muted); display: flex; align-items: center; gap: 8px; }
+.timeline-location i { color: var(--accent-purple); }
 
 /* Contact Section Enhancement */
 .contact-box { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 24px; padding: 4rem 2rem; text-align: center; backdrop-filter: blur(16px); }
@@ -57,8 +64,13 @@ body { background-color: var(--bg-dark); color: var(--text-main); line-height: 1
 .contact-card:hover { transform: translateY(-10px); border-color: var(--accent-purple); box-shadow: 0 10px 20px var(--glow); }
 
 @media (max-width: 768px) {
-    .experience-grid { grid-template-columns: 1fr; }
-    .experience-card.span-2 { grid-column: span 1; }
     .hero h1 { font-size: 2.5rem; }
     .contact-card { width: 100%; }
+    
+    .timeline::after { left: 31px; }
+    .timeline-item { width: 100%; padding-left: 70px; padding-right: 25px; }
+    .timeline-item:nth-child(even) { left: 0%; }
+    .timeline-item:nth-child(odd) .timeline-dot,
+    .timeline-item:nth-child(even) .timeline-dot { left: 19px; }
+    .timeline-content:hover { transform: translateX(8px); }
 }
